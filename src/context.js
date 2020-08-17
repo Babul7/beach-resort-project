@@ -14,7 +14,6 @@ export default class RoomProvider extends Component {
     sortedRooms: [],
     featuredRooms: [],
     loading: true,
-    //
     type: "all",
     capacity: 1,
     price: 0,
@@ -56,7 +55,7 @@ export default class RoomProvider extends Component {
     // this.getData();
     let rooms = this.formatData(items);
     let featuredRooms = rooms.filter(room => room.featured === true);
-    //
+    
     let maxPrice = Math.max(...rooms.map(item => item.price));
     let maxSize = Math.max(...rooms.map(item => item.size));
     this.setState({
@@ -64,7 +63,6 @@ export default class RoomProvider extends Component {
       featuredRooms,
       sortedRooms: rooms,
       loading: false,
-      //
       price: maxPrice,
       maxPrice,
       maxSize
